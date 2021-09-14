@@ -1,0 +1,4 @@
+used libraries:
+    beautifulsoup4
+    requests
+    json (build in)
