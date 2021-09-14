@@ -1,0 +1,52 @@
+Outfindo se v současné době zabývá doporučováním nejvhodnějších (e)-kol zákazníkům, které jsou v součastnosti k mání. Proto byl i tématicky zvolen tento úkol.
+Zadání úkolu
+
+Součástí tohoto úkolu bude potřeba vytvořit malý scrapovací skript/projekt v jazyce python spustitelný ve verzi pythonu 3.9. Součastí řešení je i přiložený soubor requirements.txt s použitými knihovnami. Pokud byste se rozhodli vyvíjet v Docker kontejneru, přiložte prosím patřičný dockerfile (odevzdat projekt v dockeru není nutné).
+
+Hlavním úkolem bude napsat funkci pro získání detailních informací o kole ze stránek výrobce Lapierre https://www.lapierre-bike.cz/ a bude vracet slovník. Tato funkce se bude jmenovat scrape_product_detail_page, a bude příjimat textový řetězec detailu produktové stránky v proměnné product_detail_url viz.
+
+    def scrape_product_detail_page(product_detail_url):
+        pass
+
+Výstupem funkce scrape_product_detail_page jak již bylo avizováno, bude slovník s vyplněnými parametry:
+
+    model - textový název modelu
+    url - textový název detailu stránky
+    main_photo_path - cesta k hlavní fotce o největších rozměrech
+    additional_photo_paths - textové pole s dalšími cestami fotek opět v největší kvalitě.
+    price - celočíselná hotnota
+    model_year - celočíselná hodota modelového roky daného kola, na "Ročník" v sekci
+    Sekce parameters bude obsahovat tyto parametry
+    weight - textová hodnota, nachází pod názvem "Hmotnost" v sekci specifikace
+    frame - textová hodnota názvu rámu, nachází se pod názvem "Rám" v sekci specifikace
+
+Pro příklad stránky https://www.lapierre-bike.cz/produkt/spicy-cf-69/5943 uvádíme modelový výstup funkce scrape_product_detail_page
+
+ {
+    "model": "Spicy CF 6.9",
+    "url": "https://www.lapierre-bike.cz/produkt/spicy-cf-69/5943",
+    "main_photo_path": "https://mojekolo.online/foto/product/1100/lapierre-spicy-cf-69-2021-15-8308.JPG",
+    "additional_photo_paths": [
+        "https://mojekolo.online/foto/product/410/lapierre-lapierre-spicy-cf-69-2021-3.JPG",
+        "https://mojekolo.online/foto/product/410/lapierre-lapierre-spicy-cf-69-2021-4.JPG",
+        "https://mojekolo.online/foto/product/410/lapierre-lapierre-spicy-cf-69-2021-5.JPG"
+     ],
+    "price": 114990,
+    "model_year": 2021,
+    "parameters": {
+        "weight": "15,8 kg",
+        "frame": "SPICY FULL CARBON ULTIMATE 170mm travel (29'') PRESSFIT, BOOST, METRIC, THRU AXLE"
+    }
+ }
+
+Pokud daná stránka neobsahuje potřebné informace nebo parematery, doplňte None hodnotu
+
+Ve funkci main si ověřte funkci scrape_product_detail_page na jiných detailech kol ze stránek https://www.lapierre-bike.cz/. U pěti vybraných url detailech kol dle libosti, zapište jako pole výstupy funkce scrape_product_detail_page do souboru top-5-bikes.json jako validní json soubor.
+
+Na odevzdání úkolu máte týden.
+
+V případě nejasností se obracejte na email: tom.michna@outfindo.com.
+
+Vypracovaný úkol zašlete emailem buď jako odkaz na váš git repozitář (preferovaná cesta), nebo jako zip file na email tom.michna@outfindo.com
+
+Mnoho zdaru při vypracování přeje data tým Outfinda.
